@@ -2,6 +2,7 @@ package tp.visualisation.echec;
 
 public class Piece {
     String  name;
+    public int Alive;
     public int     x;
     public int     y;
     int     blackWhite;
@@ -25,6 +26,7 @@ public class Piece {
 
     public Piece(String name, int x, int blackWhite){
         String path = "./tp/visualisation/echec/images/" + name;
+        this.Alive = 1;
         this.x = x;
         this.y = 0;
         if (name.equals("P")){
@@ -51,6 +53,11 @@ public class Piece {
         this.pathPng = path;
         this.name = name;
 //        System.out.println(this.x);
+    }
+    public void dead(){
+        this.Alive = 0;
+        this.x += 18;
+        this.y += 18;
     }
 }
 

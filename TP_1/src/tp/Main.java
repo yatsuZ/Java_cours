@@ -33,9 +33,12 @@ public class Main {
         String j2 = saisie("\nJoueur 2 : ", 0);
         System.out.println("Bien venue " + j1 + " et " + j2);
         Jeu game = new Jeu(choiceWhite(j1, j2));
-        while (true){
-            game.dessinePlateau();
-            
+        System.out.println("\n\n\n");
+        while (!(game.joueurBlanc.Perdu() || game.joueurNoir.Perdu())){
+            game.dessinePlateau(0);
+            game.selectionPiece();
         }
+        game.dessinePlateau(0);
+        System.out.println("\n\n\nFINIIIIIIII !! merci davoir jouer je compte rajouter des bonus telle que retourner en arriere et de donner des contrainte au piece");
     }
 }

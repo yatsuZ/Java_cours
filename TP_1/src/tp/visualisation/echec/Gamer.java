@@ -6,6 +6,18 @@ public class Gamer {
     String equipe;
 
     int couleur;
+
+    public boolean Perdu(){
+        if (this.pieces[12].Alive == 0){
+            if (couleur == 0){
+                System.out.println("Les Noir on gagne");
+            }else {
+                System.out.println("Les Blanc on gagne");
+            }
+            return true;
+        }
+        return false;
+    }
     public Gamer(String n, int t) {
         this.name = n;
         if (t % 2 == 0) {
